@@ -1,17 +1,9 @@
-import * as web3 from "@solana/web3.js";
 import * as anchor from "@coral-xyz/anchor";
-import * as anchor from "@project-serum/anchor";
-import { Program } from "@project-serum/anchor";
+import { Program } from "@coral-xyz/anchor";
 import { HelloSolana } from "../target/types/hello_solana";
-import type { HelloSolana } from "../target/types/hello_solana";
 
 describe("hello-solana", () => {
-  // Configure the client to use the local cluster
-  anchor.setProvider(anchor.AnchorProvider.env());
-
-  const program = anchor.workspace.HelloSolana as anchor.Program<HelloSolana>;
-  
-  // Configure the client to use the local cluster.
+  // Set up the Anchor provider
   anchor.setProvider(anchor.AnchorProvider.env());
 
   const program = anchor.workspace.HelloSolana as Program<HelloSolana>;

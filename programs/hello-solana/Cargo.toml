@@ -8,12 +8,20 @@ edition = "2021"
 crate-type = ["cdylib", "lib"]
 name = "hello_solana"
 
+[programs.localnet]
+anchor = "6qNqxkRF791FXFeQwqYQLEzAbGiqDULC5SSHVsfRoG89"
+
+[provider]
+cluster = "Localnet"
+wallet = "~/.config/solana/id.json"
+
 [features]
 no-entrypoint = []
 no-idl = []
 no-log-ix-name = []
 cpi = ["no-entrypoint"]
+idl-build = ["anchor-lang/idl-build"]
 default = []
 
 [dependencies]
-anchor-lang = "0.29.0"
+anchor-lang = "0.31.1"
